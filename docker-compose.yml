@@ -1,0 +1,27 @@
+version: "3"
+services:
+  db:
+    image: "mysql:8.0"
+    container_name: townsq-mysql
+    hostname: mysql
+    restart: "no"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'townsq'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'pass'
+    volumes:
+      - "./docker/mysql:/var/lib/mysql:rw"
+    ports:
+      - "3303:3306"
+    networks:
+      townsq-network:
+        ipv4_address: 172.8.8.33
+networks:
+  townsq-network:
+    name: "townsq-network"
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.8.8.0/24

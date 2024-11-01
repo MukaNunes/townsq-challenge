@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "8dae4a6a-6231-4227-ae8e-15b38ff7729e",
+		"name": "Townsq challenge collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "837283"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Insert New User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b3duc3EiLCJzdWIiOiJ0b3duc3Ffc3VwZXIiLCJleHAiOjE3MzA1NjU2OTcsImlhdCI6MTczMDQ3OTI5Nywic2NvcGUiOlsiQURNSU4iLCJBQ0NPVU5UX01BTkFHRVIiLCJERUZBVUxUIl19.tY4sBKAum5_VmJHY5_pf7ykH_601TDLoGWhEfplnL4DjVHjmJ1VqUD3tDc2mqbsvY96sJ64g7NElFOYBacHSfPSDwJlRrVV4a3O61BBWOF-6tZg3eIewhNujczklNYkubMwpDXGxawr542aN1rxV11rYWWJ32IScrie9WQMmod_rpxNuCTsSVBsKI5eMCfCl5IgYnghf4xechpane_KZjCL1rETiK3WHRNBdy0lXzj5g0NuKsDSW46YUWYiAKaxcT-p9hzQc5BrJHSwnFwQrsEvqPEeo7VXcvGWsjDSKW0mghJTNWsAURu_PQQlhsw2-1E3zb4A-MDg-dhw_tUefPA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"NewUsername\",\n    \"password\": \"NewUserPass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b3duc3EiLCJzdWIiOiJ0b3duc3Ffc3VwZXIiLCJleHAiOjE3MzA1NjU2OTcsImlhdCI6MTczMDQ3OTI5Nywic2NvcGUiOlsiQURNSU4iLCJBQ0NPVU5UX01BTkFHRVIiLCJERUZBVUxUIl19.tY4sBKAum5_VmJHY5_pf7ykH_601TDLoGWhEfplnL4DjVHjmJ1VqUD3tDc2mqbsvY96sJ64g7NElFOYBacHSfPSDwJlRrVV4a3O61BBWOF-6tZg3eIewhNujczklNYkubMwpDXGxawr542aN1rxV11rYWWJ32IScrie9WQMmod_rpxNuCTsSVBsKI5eMCfCl5IgYnghf4xechpane_KZjCL1rETiK3WHRNBdy0lXzj5g0NuKsDSW46YUWYiAKaxcT-p9hzQc5BrJHSwnFwQrsEvqPEeo7VXcvGWsjDSKW0mghJTNWsAURu_PQQlhsw2-1E3zb4A-MDg-dhw_tUefPA"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"NewUsername\",\n    \"password\": \"NewUserPass\",\n    \"role\": \"ACCOUNT_MANAGER\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users/4"
+					},
+					"response": []
+				},
+				{
+					"name": "List all Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b3duc3EiLCJzdWIiOiJ0b3duc3Ffc3VwZXIiLCJleHAiOjE3MzA1NjU2OTcsImlhdCI6MTczMDQ3OTI5Nywic2NvcGUiOlsiQURNSU4iLCJBQ0NPVU5UX01BTkFHRVIiLCJERUZBVUxUIl19.tY4sBKAum5_VmJHY5_pf7ykH_601TDLoGWhEfplnL4DjVHjmJ1VqUD3tDc2mqbsvY96sJ64g7NElFOYBacHSfPSDwJlRrVV4a3O61BBWOF-6tZg3eIewhNujczklNYkubMwpDXGxawr542aN1rxV11rYWWJ32IScrie9WQMmod_rpxNuCTsSVBsKI5eMCfCl5IgYnghf4xechpane_KZjCL1rETiK3WHRNBdy0lXzj5g0NuKsDSW46YUWYiAKaxcT-p9hzQc5BrJHSwnFwQrsEvqPEeo7VXcvGWsjDSKW0mghJTNWsAURu_PQQlhsw2-1E3zb4A-MDg-dhw_tUefPA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/users/all"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create Order",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b3duc3EiLCJzdWIiOiJ0b3duc3Ffc3VwZXIiLCJleHAiOjE3MzA1NjU2OTcsImlhdCI6MTczMDQ3OTI5Nywic2NvcGUiOlsiQURNSU4iLCJBQ0NPVU5UX01BTkFHRVIiLCJERUZBVUxUIl19.tY4sBKAum5_VmJHY5_pf7ykH_601TDLoGWhEfplnL4DjVHjmJ1VqUD3tDc2mqbsvY96sJ64g7NElFOYBacHSfPSDwJlRrVV4a3O61BBWOF-6tZg3eIewhNujczklNYkubMwpDXGxawr542aN1rxV11rYWWJ32IScrie9WQMmod_rpxNuCTsSVBsKI5eMCfCl5IgYnghf4xechpane_KZjCL1rETiK3WHRNBdy0lXzj5g0NuKsDSW46YUWYiAKaxcT-p9hzQc5BrJHSwnFwQrsEvqPEeo7VXcvGWsjDSKW0mghJTNWsAURu_PQQlhsw2-1E3zb4A-MDg-dhw_tUefPA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\": [\n        {\n            \"description\": \"Tv LG 32''\",\n            \"quantity\": 1,\n            \"value\": 999.90\n        },\n        {\n            \"description\": \"Geladeira Electrolux\",\n            \"quantity\": 1,\n            \"value\": 2700.90\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "List Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b3duc3EiLCJzdWIiOiJ0b3duc3Ffc3VwZXIiLCJleHAiOjE3MzA1NjU2OTcsImlhdCI6MTczMDQ3OTI5Nywic2NvcGUiOlsiQURNSU4iLCJBQ0NPVU5UX01BTkFHRVIiLCJERUZBVUxUIl19.tY4sBKAum5_VmJHY5_pf7ykH_601TDLoGWhEfplnL4DjVHjmJ1VqUD3tDc2mqbsvY96sJ64g7NElFOYBacHSfPSDwJlRrVV4a3O61BBWOF-6tZg3eIewhNujczklNYkubMwpDXGxawr542aN1rxV11rYWWJ32IScrie9WQMmod_rpxNuCTsSVBsKI5eMCfCl5IgYnghf4xechpane_KZjCL1rETiK3WHRNBdy0lXzj5g0NuKsDSW46YUWYiAKaxcT-p9hzQc5BrJHSwnFwQrsEvqPEeo7VXcvGWsjDSKW0mghJTNWsAURu_PQQlhsw2-1E3zb4A-MDg-dhw_tUefPA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "List Order Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b3duc3EiLCJzdWIiOiJoZWxsZW4iLCJleHAiOjE3MzA1MzUxNzAsImlhdCI6MTczMDQ0ODc3MCwic2NvcGUiOlsiQUNDT1VOVF9NQU5BR0VSIiwiREVGQVVMVCJdfQ.M04B-pqGQa2d1r7PXVu2PLsYnttta22busBGGNaUSnUf4hXJxR8JLvh8OFLjgdUY0uVH050AWWYa0sKSVI2Nn0NMjTUr-SSJHs02e20As_QCY4_rx8Tk97KqDwPx0rGf36j7SqIQt67inMSabf3Ks63k5DAmSWCbtMZw_5jNc81dJdZ38nrG1hwR_wu0IRRiLVAY1cfb4VfiI2TmqGDd2quAhCBulBJja5RZzTw8mDNMBcvXcyuRJN3Cf2l_xqSly-jwLJHJorNtU0QMpwe9oEWODEe5MtpGqGWu9wSXUSBqFXfSWo68lLt6t7LmzSEjLD3V3T5CwDk1YXJ4z6Nb9g"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\": [\n        {\n            \"description\": \"Item teste\",\n            \"quantity\": 2,\n            \"value\": 100\n        },\n        {\n            \"description\": \"Item teste 2\",\n            \"quantity\": 1,\n            \"value\": 200\n        },\n                {\n            \"description\": \"Item teste 4\",\n            \"quantity\": 1,\n            \"value\": 0.50\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/orders/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Process Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b3duc3EiLCJzdWIiOiJ0b3duc3Ffc3VwZXIiLCJleHAiOjE3MzA1NjU2OTcsImlhdCI6MTczMDQ3OTI5Nywic2NvcGUiOlsiQURNSU4iLCJBQ0NPVU5UX01BTkFHRVIiLCJERUZBVUxUIl19.tY4sBKAum5_VmJHY5_pf7ykH_601TDLoGWhEfplnL4DjVHjmJ1VqUD3tDc2mqbsvY96sJ64g7NElFOYBacHSfPSDwJlRrVV4a3O61BBWOF-6tZg3eIewhNujczklNYkubMwpDXGxawr542aN1rxV11rYWWJ32IScrie9WQMmod_rpxNuCTsSVBsKI5eMCfCl5IgYnghf4xechpane_KZjCL1rETiK3WHRNBdy0lXzj5g0NuKsDSW46YUWYiAKaxcT-p9hzQc5BrJHSwnFwQrsEvqPEeo7VXcvGWsjDSKW0mghJTNWsAURu_PQQlhsw2-1E3zb4A-MDg-dhw_tUefPA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order\": 1,\n    \"paymentInfo\": \"credit card visa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/payments"
+					},
+					"response": []
+				},
+				{
+					"name": "List Payment Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0b3duc3EiLCJzdWIiOiJ0b3duc3Ffc3VwZXIiLCJleHAiOjE3MzA1NjU2OTcsImlhdCI6MTczMDQ3OTI5Nywic2NvcGUiOlsiQURNSU4iLCJBQ0NPVU5UX01BTkFHRVIiLCJERUZBVUxUIl19.tY4sBKAum5_VmJHY5_pf7ykH_601TDLoGWhEfplnL4DjVHjmJ1VqUD3tDc2mqbsvY96sJ64g7NElFOYBacHSfPSDwJlRrVV4a3O61BBWOF-6tZg3eIewhNujczklNYkubMwpDXGxawr542aN1rxV11rYWWJ32IScrie9WQMmod_rpxNuCTsSVBsKI5eMCfCl5IgYnghf4xechpane_KZjCL1rETiK3WHRNBdy0lXzj5g0NuKsDSW46YUWYiAKaxcT-p9hzQc5BrJHSwnFwQrsEvqPEeo7VXcvGWsjDSKW0mghJTNWsAURu_PQQlhsw2-1E3zb4A-MDg-dhw_tUefPA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/payments/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "townsq_super",
+						"password": "verySecurePassword"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/authenticate"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:8080"
+		}
+	]
+}
